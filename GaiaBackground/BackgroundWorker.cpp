@@ -45,4 +45,13 @@ namespace Gaia::Background
     {
         return ThreadFlag;
     }
+
+    /// Block the invoker thread until the worker thread exits.
+    void BackgroundWorker::Join()
+    {
+        if (ThreadToken.valid())
+        {
+            ThreadToken.get();
+        }
+    }
 }

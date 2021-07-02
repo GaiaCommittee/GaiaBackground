@@ -46,6 +46,10 @@ namespace Gaia::Background
          *  and this function will block the invoker until background thread exits.
          */
         virtual void Stop();
+
+        /// Block the invoker thread until work thread exits.
+        virtual void Join();
+
         /**
          * @brief Check whether the background working thread is running or not.
          * @return The value of ThreadFlag.
