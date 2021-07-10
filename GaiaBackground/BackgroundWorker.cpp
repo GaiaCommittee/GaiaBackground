@@ -54,4 +54,14 @@ namespace Gaia::Background
             ThreadToken.get();
         }
     }
+
+    /// Copy constructor.
+    BackgroundWorker::BackgroundWorker(const BackgroundWorker &target) :
+            BackgroundWorker(target.ThreadFunction)
+    {}
+
+    /// Move constructor.
+    BackgroundWorker::BackgroundWorker(BackgroundWorker &&target) noexcept :
+            BackgroundWorker(std::move(target.ThreadFunction))
+    {}
 }

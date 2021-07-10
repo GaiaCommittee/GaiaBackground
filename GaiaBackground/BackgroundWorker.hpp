@@ -30,6 +30,14 @@ namespace Gaia::Background
          */
         explicit BackgroundWorker(std::function<void(const std::atomic_bool&)> function);
 
+        /// Copy constructor, will only copy the lambda function.
+        BackgroundWorker(const BackgroundWorker& target);
+        /**
+         * @brief Move constructor, will only move the lambda function,
+         *        if the source worker has already been started, then this worker will be started.
+         */
+        BackgroundWorker(BackgroundWorker&& target) noexcept;
+
         /// Stop the background worker and destruct.
         virtual ~BackgroundWorker();
 
