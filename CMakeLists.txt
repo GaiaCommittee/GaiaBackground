@@ -24,5 +24,4 @@ endif()
 add_subdirectory("GaiaBackground")
 
 if (WITH_TEST)
-    add_subdirectory("GaiaEventsTest")
 endif()
