@@ -9,8 +9,12 @@ cmake_minimum_required(VERSION 3.10)
 #==============================
 
 if (NOT PROJECT_DECLARED)
-    project("Gaia Background" LANGUAGES CXX VERSION 1.0)
+    project("Gaia Background" LANGUAGES CXX)
     set(PROJECT_DECLARED)
+endif()
+
+if (NOT PROJECT_SUIT)
+    set(PROJECT_SUIT ON)
 endif()
 
 #==============================
